@@ -59,5 +59,10 @@
 			<type>2</type>
 			<location>/home/brian/git/BRFO/FurnitureOutlet/WebContent/app/core</location>
 		</link>
+		<link>
+			<name>WebContent/assets/brands</name>
+			<type>2</type>
+			<location>/home/brian/git/BRFO/FurnitureOutlet/WebContent/assets/brands</location>
+		</link>
 	</linkedResources>
 </projectDescription>
