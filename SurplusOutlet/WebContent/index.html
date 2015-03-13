@@ -1,395 +1,105 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	<!-- This tells mobile devices to default to the device screen size. -->
-	<title>Black River Surplus Outlet - Black River Falls Wisconsin</title>
-	<link rel="stylesheet" href="css/html5reset-1.6.1.css">
-	<link rel="stylesheet" type="text/css" href="scripts/bootstrap-3.3.2-dist/css/bootstrap.css" />
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/header.css">
-	<link rel="stylesheet" href="css/footer.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- This tells mobile devices to default to the device screen size. -->
+    <meta name="viewport" content="width=device-width" />
+
+    <script type="text/javascript">var siteName = 'BRSO'</script>   
+    <title>Black River Surplus Outlet - Black River Falls Wisconsin</title>
+
+    <link rel="stylesheet" href="css/html5reset-1.6.1.css">
+    <link rel="stylesheet" type="text/css" href="scripts/bootstrap-3.3.2-dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/youtube.css">
-	<script src="scripts/jquery-1.11.2.min.js"></script>
-	<script src="scripts/angular.min.js"></script>
-	<script src="scripts/angular-animate.min.js"></script>
-	<script src="app/app.module.js" type="text/javascript"></script>
-	<script src="app/blocks/exception/exception.module.js"></script>
-	<script src="app/blocks/exception/exception-handler.provider.js"></script>
-	<script src="app/blocks/exception/exception.js"></script>
-	<script src="app/blocks/logger/logger.module.js"></script>
-	<script src="app/blocks/logger/logger.js"></script>
-	<script src="app/core/core.module.js" type="text/javascript"></script>
-	<script src="app/components/header/headerController.js" type="text/javascript"></script>
-	<script src="app/components/footer/footerController.js" type="text/javascript"></script>
-	<script src="app/components/brands/brandsController.js" type="text/javascript"></script>
+
+    <script src="scripts/jquery-1.11.2.min.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-animate.min.js"></script>
+    <script src="scripts/angular-sanitize.min.js"></script> 
+    <script src="scripts/tabletop.js"></script> 
+    
+    <script src="app/app.module.js" type="text/javascript"></script>
+
+    <script src="app/blocks/exception/exception.module.js"></script>
+    <script src="app/blocks/exception/exception-handler.provider.js"></script>
+    <script src="app/blocks/exception/exception.js"></script>
+    <script src="app/blocks/logger/logger.module.js"></script>
+    <script src="app/blocks/logger/logger.js"></script>
+	
+    <script src="app/core/core.module.js" type="text/javascript"></script>
+    <script src="app/components/header/headerController.js" type="text/javascript"></script>
+    <script src="app/components/footer/footerController.js" type="text/javascript"></script>
+    <script src="app/components/brands/brandsController.js" type="text/javascript"></script>
     <script src="app/components/pictures/picSliderController.js" type="text/javascript"></script>
+    <script src="app/components/pictures/picModalController.js" type="text/javascript"></script>
     <script src="app/components/youtube/youtubeController.js" type="text/javascript"></script>
+    <script src="app/components/google/googleDocsController.js" type="text/javascript"></script>
+
 </head>
 <body>
 	<div id="topOfPage"></div>
-	<header activeItem="Home"
-		menuItems="[
-                    {caption: 'Home'},
-                    {caption: 'Tools &amp; Tarps'},
-                    {caption: 'Camping-Fishing-Knives'},
-                    {caption: 'Gifts &amp; Decor'},
-                    {caption: 'Housewares-Pet Goods-Office Supplies'},
-                    {caption: 'Greeting Cards &amp; Party Supplies'},
-                    {caption: 'Silk Flowers &amp; Crafts'},
-                    {caption: 'The Man Cave'},
-                    {caption: 'Toys &amp; Kids Books'},
-                    {caption: 'Furniture Outlet', target : 'http://blackriverfurnitureoutlet.com/'}
-                    ]">
-	</header>
 	
-	<div ng-switch on="activeMenuItem">
-		<div class="largePicSlider" ng-switch-default>
-			<fade-in-slider interval="3000"
-				images="[
-            {src : 'home/Black-River-Surplus-Outlet-store-front-pic.png', title : 'Black River Surplus Outlet'},
-            {src : 'home/Mr-Stuff.png', title: ''},
-            {src : 'home/Black-River-Surplus-Truck.png', title: ''} ]"></fade-in-slider>
-		</div>
-		<div class="largePicSlider" ng-switch-when="Tools &amp; Tarps">
-			<fade-in-slider interval="3000"
-				images="[
-            {src : 'toolsandtarps/Wrenches.png', title : ''},
-            {src : 'toolsandtarps/Isle-of-tools.png', title: ''},
-            {src : 'toolsandtarps/Isle-2.png', title: ''},
-            {src : 'toolsandtarps/Misc-tools.png', title: ''} ]"></fade-in-slider>
-		</div>
-		<div class="largePicSlider" ng-switch-when="Camping-Fishing-Knives">
-			<fade-in-slider interval="3000"
-				images="[
-            {src : 'camping/Camping-Gear.png', title : ''},
-            {src : 'camping/Camping-stuff-Black-River-Falls.png', title: ''},
-            {src : 'camping/Fishing-Lures.png', title: ''},
-            {src : 'camping/Fishing-supplies-Black-River-Falls.png', title: ''},
-            {src : 'camping/Gloves-at-BRF-Surplus.png', title: ''},
-            {src : 'camping/knife-slide.png', title: ''} ]"></fade-in-slider>
-		</div>
-		<div class="largePicSlider" ng-switch-when="Gifts &amp; Decor">
-			<fade-in-slider interval="3000"
-				images="[
-            {src : 'gifts/Garden-Knomes-Black-River-Falls-Surplus.png', title : ''},
-            {src : 'gifts/Home-signs-at-BRF-Surplus.png', title: ''},
-            {src : 'gifts/House-Stars.png', title: ''},
-            {src : 'gifts/Outdoor-Decor-in-Black-River-Falls.png', title: ''},
-            {src : 'gifts/Signs-at-Black-River-Furniture-Outlet.png', title: ''} ]"></fade-in-slider>
-		</div>
-		<div class="largePicSlider"
-			ng-switch-when="Housewares-Pet Goods-Office Supplies">
-			<fade-in-slider interval="3000"
-				images="[
-            {src : 'housewares/Office-supplies-in-BRF.png', title : ''},
-            {src : 'housewares/For-the-office.png', title: ''},
-            {src : 'housewares/For-the-kitchen.png', title: ''} ]"></fade-in-slider>
-		</div>
-		<div class="largePicSlider" ng-switch-when="Greeting Cards &amp; Party Supplies">
-			<fade-in-slider interval="3000"
-				images="[
-            {src : 'greetingcards/cards.png', title : ''},
-            {src : 'greetingcards/Birthday-Party-Supplies.png', title: ''},
-            {src : 'greetingcards/Black-River-Falls-Surplus-Greeting-Cards.png', title: ''},
-            {src : 'greetingcards/Party-Equiptment.png', title: ''},
-            {src : 'greetingcards/Party-Headquarters-in-Black-River-Falls.png', title: ''} ]"></fade-in-slider>
-		</div>
-		<div class="largePicSlider" ng-switch-when="Silk Flowers &amp; Crafts">
-			<fade-in-slider interval="3000"
-				images="[
-            {src : 'crafts/BRF-Surplus-Slik-Flowers.png', title : ''},
-            {src : 'crafts/beautiful-flowers.png', title: ''},
-            {src : 'crafts/Give-her-some-flowers.png', title: ''},
-            {src : 'crafts/Silk-Flowers.png', title: ''} ]"></fade-in-slider>
-		</div>
-		<div class="largePicSlider" ng-switch-when="The Man Cave">
-			<fade-in-slider interval="3000"
-				images="[
-            {src : 'mancave/Man-Cave-Signs.png', title : ''},
-            {src : 'mancave/We-have-suspenders.png', title : ''},
-            {src : 'mancave/Men-of-many-hats1.png', title : ''},
-            {src : 'mancave/Sports-Gear.png', title : ''},
-            {src : 'mancave/Mens-shirts.png', title: ''},
-            {src : 'mancave/What-Happens-in-the-Man-Cave-Matt.png', title: ''},
-            {src : 'mancave/Green-Bay-Packer-Pictures-on-sale.png', title: ''} ]"></fade-in-slider>
-		</div>
-		<div class="largePicSlider" ng-switch-when="Toys &amp; Kids Books">
-			<fade-in-slider interval="3000"
-				images="[
-            {src : 'toys/Kids-books.png', title : ''},
-            {src : 'toys/school-bus.png', title: ''},
-            {src : 'toys/Coloring-and-comic-books.png', title: ''},
-            {src : 'toys/dolls-for-kids.png', title: ''},
-            {src : 'toys/lots-of-toys-for-boys.png', title: ''},
-            {src : 'toys/Story-books.png', title: ''} ]"></fade-in-slider>
-		</div>
-	</div>
-	<div id="variableContent" class="content">
-		<div id="contentSection" class="contentSection shadowed rounded">
-			<div ng-switch on="activeMenuItem">
-				<div ng-switch-default class="content-slider-fadeInOut">
-					<h1>
-						<strong>Mission Statement:</strong>
-					</h1>
-					<h1 style="text-align: center;">
-						<span style="color: #ff0000;">Customer service and variety forever!</span>
-					</h1>
-					<p style="text-align: right;">
-						<strong> SMALL BUSINESS SURVIVES! </strong>
-					</p>
-					<div style="height: 8px;"></div>
-					<br>Open 7 days a week for 20 years. our family owned Black River
-					Surplus &amp; variety offers "fun stop" shopping instead of one stop
-					shopping! With thousands of unique and useful items to choose from, our
-					customers come and buy from us daily- everything from tools to gifts to
-					greeting cards! <br>
-					<div style="height: 8px;"></div>
-					<strong>In our store</strong> we offer a huge variety of tools for the
-					tradesman, farmer and the home owner. We showcase knives of all kinds that
-					are both ornamental for displaying or functional for work and hunting. We
-					have camping and fishing equipment (we fish our own baits). Our "man cave"
-					has great "caveman" appeal! There is a section dedicated to pet products.
-					Our office supply area is always well organized and handy for our
-					customers. We have a toy and kids book section. We have 100s of running
-					feet of housewares, kitchen gadgets, spices and "stuff," for people who
-					need "stuff." Really?We all need stuff! <br>
-					<div style="height: 8px;"></div>
-					<strong>On our gift side of the store</strong> we sell 100s of quality
-					greeting cards everyday! We have a huge affordable silk flower area that
-					changes with the season. There is row of picture frames, candles and
-					scrapbooking supplies. We have craft items and yarn. We have party goods,
-					gift wrap and great prices on nice gift bags. There is a whole wall
-					dedicated to home decor signs, tin stars, dolls and pictures. We have
-					figurines and cabin decor, rugs, blankets and so much more! It's hard to
-					explain the pure volume of inventory. Give us a chance to work for your
-					shopping dollars- not expect them. <br>
-					<div style="height: 8px;"></div>
-					<strong>Even with over 20,000 square feet of variety,</strong> we are still
-					adding new products and new customers every week. Welcome &amp; be invited
-					if you live in Black River Falls or the surrounding area, or if you are
-					passing through, to shop Black River Surplus! Open 7 days a week. Hwy 54
-					“On The West Side!”
-				</div>
-				<div ng-switch-when="Tools &amp; Tarps" class="content-slider-fadeInOut">
-					<h2>
-						<span style="color: #ff0000;">Tools, tools, tools and more tools at
-							Black River Surplus!</span>
-					</h2>
-					<h3>We have tools for the mechanic, the carpenter and the home owner 7
-						days a week!</h3>
-					<h5>We stock:</h5>
-					<div style="width: 200px; padding: 10px; float: left; display: inline;">
-						<ul>
-							<li>“cherry pickers”</li>
-							<li>engine stands</li>
-							<li>shop presses</li>
-							<li>drill presses</li>
-							<li>hydraulic jacks</li>
-							<li>floor jacks</li>
-							<li>chop saws</li>
-							<li>all size cut off wheels</li>
-							<li>angle grinders</li>
-							<li>bench grinders</li>
-							<li>air compressors</li>
-							<li>“come-a-longs”</li>
-						</ul>
-					</div>
-					<p></p>
-					<div style="width: 200px; padding: 10px; float: left; display: inline;">
-						<ul>
-							<li>chain</li>
-							<li>chain hoists</li>
-							<li>tool boxes</li>
-							<li>ammo cans</li>
-							<li>vises</li>
-							<li>power washers</li>
-							<li>parts washers</li>
-							<li>air tools</li>
-							<li>power tools</li>
-							<li>cordless tools</li>
-							<li>handle tools</li>
-							<li>(rakes, hoes, shovels, axes, mauls,…etc),</li>
-						</ul>
-					</div>
-					<p></p>
-					<div style="width: 200px; padding: 10px; float: left; display: inline;">
-						<ul>
-							<li>garden tools</li>
-							<li>automotive tools</li>
-							<li>towing hook ups</li>
-							<li>hitches</li>
-							<li>tie downs</li>
-							<li>bungees</li>
-							<li>casters</li>
-							<li>wheels</li>
-							<li>pry bars</li>
-							<li>bolt cutters</li>
-							<li>hardware kits (washers</li>
-							<li>O rings</li>
-						</ul>
-					</div>
-					<p></p>
-					<div style="width: 200px; padding: 10px; float: left; display: inline;">
-						<ul>
-							<li>cotter pins</li>
-							<li>bolts</li>
-							<li>nuts</li>
-							<li>etc…)</li>
-							<li>misc. hardware</li>
-							<li>bulk wrenches</li>
-							<li>wrench sets</li>
-							<li>bulk sockets</li>
-							<li>socket sets</li>
-							<li>striking tools</li>
-							<li>tool belts</li>
-							<li>measuring tools</li>
-							<li>hand saws &amp; literally a ton more tools</li>
-						</ul>
-					</div>
-					<p></p>
-					<div style="clear: both;"></div>
-					<p></p>
-					<div>
-						<strong>Our&nbsp;on-hand<var></var>&nbsp;tool section is huge!
-						</strong>
-					</div>
-					<div></div>
-					<div>We always have 20-50 styles of tarps in stock. If you need to
-						cover the boat, the woodpile, the trampoline, your campsite, the trailer,
-						the silage, the hay wagon, your shingling project or your whole house. We
-						always have tarps!</div>
-				</div>
-				<div ng-switch-when="Camping-Fishing-Knives"
-					class="content-slider-fadeInOut">
-					<strong>Camping Section:</strong><br> For the camper we always try to
-					cover some of the basics at Black River Surplus. We have some tents, tent
-					stakes, sleeping bags, blankets, camp rugs, rope and tarps. We have a whole
-					tool section, flashlights &amp; batteries. We offer fire friendly cast iron
-					pots, pans and Dutch ovens along with aluminum stock pots for corn and fish
-					boils. There’s a big display of kitchen gadgets for the camp “cookie.” Plus
-					we have picnic supplies and a whole section of spices for grilling and
-					chilling.
-					</p>
-					<p>
-						<strong>Fishing Section:</strong><br> For the angler we stock the
-						basic needs of the tackle box along with some great muskie baits that are
-						guaranteed to give you a sporting chance of catching fish! We fish our
-						baits at Black River Surplus and we’ve caught fish on about everything we
-						sell but a bare hook.
-					</p>
-					<p>
-						<strong>Knives &amp; Sword Section:</strong><br> For the collector or
-						hunter we’ve been selling jack knives, ornamental swords and hunting
-						knives from day one. We stock two large showcases with gut knives,
-						skinning knives, jack knives, military knives, throwing stars, throwing
-						hatchets, daggers &amp; swords.
-					</p>
-				</div>
-				<div ng-switch-when="Gifts &amp; Decor" class="content-slider-fadeInOut">
-					<p>
-						<strong>Gifts &amp; Decor General Description:</strong><br> Stop by
-						Black River Surplus and check out our gift and decor side of the store. We
-						stock a whole wall of decorative signs with sayings on them and multiple
-						sizes of tin stars. We stock cabin decor and wildlife figurines. We have a
-						Christian gift room. We have pictures, touch lamps, wind chimes, wind
-						spinners, flags, t-shirts, sweat shirts and printed blankets. We have NFL
-						products (mostly Green Bay Packers), mandalas, a large selection of
-						porcelain dolls, jewelry, picture frames, coffee cups, gift sets, mugs and
-						rugs. Too many items to list.<br> There are all kinds of good gift
-						ideas at Black River Surplus and decor items for the home or cabin. Plus
-						we always try to find good products for different seasonal and occasional
-						events. And we always stock up before Christmas!
-					</p>
-				</div>
-				<div ng-switch-when="Housewares-Pet Goods-Office Supplies"
-					class="content-slider-fadeInOut">
-					<p>
-						<strong>Housewares Section:</strong><br> The housewares section at
-						Black River Surplus is filled with affordable and useful goods to keep the
-						household running. We have pots, pans, baking supplies and kitchen gadgets
-						galore. Plus there’s all kinds of cups, plates and plastics to finish
-						filling the cupboard. We also carry a line of scrubbing supplies,
-						cleaners, detergents, towels and washcloths for those jobs that we have to
-						do. There’s 100s of running feet of shelving dedicated to housewares at
-						Black River Surplus.
-					</p>
-					<p>
-						<strong>Pet Section:</strong><br> We always have an assortment of pet
-						products at Black River Surplus. Pet treats, ground stakes, collars,
-						chains, leashes and toys. When you stop to shop at Black River Surplus
-						don’t forget to pick up something for your “best friend!”
-					</p>
-				</div>
-				<div ng-switch-when="Greeting Cards &amp; Party Supplies"
-					class="content-slider-fadeInOut">
-					<h3>Greeting Card Section:</h3>
-					<p>
-						<strong>Black River Surplus is the “Home of the 49c Greeting
-							Card!” </strong>
-					</p>
-					<p>We’ve been buying good quality greeting card closeouts and deals
-						since we started the business. We stock something for most popular
-						occasions and they sell everyday. Plus we have a great assortment of gift
-						wraps and gift bags to pick up with your cards!</p>
-					<h3>Party Supply Section:</h3>
-					<p>At Black River Surplus we carry seasonal party goods for everything
-						from Easter dinner to Christmas and New Years Eve. We always have plates,
-						napkins utensils, tablecloths and decorations for the festivity or picnic.
-						It doesn’t matter if it’s a graduation party, camping dinner, county fair
-						or football party, we’ve got something to help you out.</p>
-				</div>
-				<div ng-switch-when="Silk Flowers &amp; Crafts" class="content-slider-fadeInOut">
-					<p>Silk Flower Section: We sell silk flowers for every season at Black
-						River Surplus. Individual stems, bushes, berries, vines, sprays, memorials
-						and arrangements. If you need flowers for spring, memorial day, summer,
-						Fourth of July, Fall, Thanksgiving and or Christmas. Please stop and shop
-						our silk flower display!</p>
-					<p>Craft Section: In our craft section at Black River Surplus we with
-						the above mentioned silk flowers, we stock a lot of scrap-booking supplies
-						and closeouts. We have craft painting kits, beads, yarn, sewing supplies,
-						stamps and all kinds of different little “crafty things.”</p>
-				</div>
-				<div ng-switch-when="The Man Cave" class="content-slider-fadeInOut">
-					<p>At Black River Surplus we have are very own “Man Cave” stocked with
-						items every caveman needs like a camouflage baseball cap, redneck
-						wind-chimes, tin signs, featuring tractors, trucks, fishing and hunting
-						advertising or Packer pictures.</p>
-					<p>Beer bobbers are always a favorite or fishing lures with beer
-						company logos printed on them when available.</p>
-					<p>
-						Our “Man Cave” is always evolving. In fact we have camouflage recliners
-						available for the man daring enough to leave the cave and adventure to our
-						<a href="http://blackriverfurnitureoutlet.com/">furniture store</a>!
-					</p>
-				</div>
-				<div ng-switch-when="Toys &amp; Kids Books" class="content-slider-fadeInOut">
-					<p>Cars, trucks, rubber animals, dolls, cap guns, puzzles, word finds,
-						crosswords, games, beach toys, butterfly nets,.. etc. There’s a bunch of
-						affordable kids stuff at Black River Surplus. Whether it’s summer-sun-fun
-						or for a gift, we try to always have a nice selection of toys on hand.</p>
-					<p>We also sell a lot of kids books for younger kids at very affordable
-						prices compared to book stores. Kids books are still very popular vs.
-						tablets and computers because tablets and computers are not always cost
-						effective for the toy room. Be sure to take a peek at some of our kids
-						books at Black River Surplus if you are teaching or reading a little one
-						to sleep at night.</p>
-				</div>
-			</div>
-    
-		</div>
+    <div ng-controller="googleDocsCtrl as googleCtrl">
+        <header activeItem="Home"
+            staticMenuItems="[
+                            {caption: 'Home'},
+                            {caption: 'Furniture Outlet', target : 'http://blackriverfurnitureoutlet.com/'}
+                            ]">
+        </header>
+
+        <div data-ng-repeat="page in googleCtrl.pages"
+            ng-if="page.Page.indexOf(activeMenuItem) > -1">
+            <div class="largePicSlider">
+                <fade-in-slider interval="3000" images="{{page.SliderImages}}"></fade-in-slider>
+            </div>
+        </div>
+
+        <div id="variableContent" class="content">
+            <div data-ng-repeat="page in googleCtrl.pages"
+                ng-if="page.Page.indexOf(activeMenuItem) > -1">
+                <div id="contentSection" class="contentSection shadowed rounded">
+                    <div class="content-slider-fadeInOut">
+                        <div ng-bind-html="page.PageText"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div data-ng-template="table" class="saleitems">
+                <div class="saleitem"
+                    data-ng-repeat="item in googleCtrl.items | filter: Active='Yes'"
+                    ng-if="item.Pages.indexOf(activeMenuItem) > -1">
+                    <span class="saleitem_title">{{item.Title}}</span>
+                    <div class="imgContainer">
+                        <img class="responsive-shrinkWidth" ng-src="{{ item.Image }}" />
+                    </div>
+                    <span class="saleitem_name">{{item.Product}} {{item.ModelNbr}}</span>
+                    <div class="saleitem_description" ng-bind-html="item.Description"></div>
+                    <div style="margin-top: 10px;">
+                        <span class="saleitem_price"> {{item.UnitPrice}}</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            
+            <div id="contentSection" class="contentSection shadowed rounded">
+                <div class="centered">Our ads.</div>
+
+                <div class="saleitems">
+                    <div data-ng-repeat="ad in googleCtrl.ads | filter: Active='Yes'" class="saleitem" ng-if="ad.Site.indexOf('BRSO') > -1">
+                        <span class="saleitem_title">{{ad.Title}}</span>
+                        <div class="youtubeContainer">
+                            <youtube videoid="{{ad.YouTubeID}}"></youtube>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
 		
-		<div id="contentSection" class="contentSection shadowed rounded">
-            <div class="centered">Our ads.</div>
-			<div style="width: 50%;">
-				<div class="youtubeContainer">
-					<youtube videoid=""></youtube>
-				</div>
-                <div class="centered">Coming soon - ad 1.</div>
-			</div>
-		</div>
-		
-		<footer domain="BRSO"></footer>
+    <footer domain='BRSO'></footer>
 </body>
 </html>
