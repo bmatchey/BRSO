@@ -64,5 +64,10 @@
 			<type>2</type>
 			<location>/home/brian/git/BRFO/FurnitureOutlet/WebContent/assets/brands</location>
 		</link>
+		<link>
+			<name>WebContent/assets/slider</name>
+			<type>2</type>
+			<location>/home/brian/git/BRFO/FurnitureOutlet/WebContent/assets/slider</location>
+		</link>
 	</linkedResources>
 </projectDescription>
