@@ -25,6 +25,7 @@
     <script src="scripts/angular-animate.min.js"></script>
     <script src="scripts/angular-sanitize.min.js"></script> 
     <script src="scripts/tabletop.js"></script> 
+    <script src="scripts/marquee.js"></script> 
     
     <script src="app/app.module.js" type="text/javascript"></script>
 
@@ -133,7 +134,20 @@
                 
             </div>
         </div>
-        
+
+        <div style="width: 95%; text-align: center;">
+            <div id="marqueecontainer" style="margin: 0 auto;" onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed">
+                <div id="vmarquee" style="position: absolute; width: 98%;">
+                    <div ng-bind-html="googleCtrl.homepageScroller">
+                    </div>
+                </div>
+            </div>
+    
+            <div id="divEmailAddress" class="responsiveText centered">
+                {{settingsCtrl.emailAddress}}
+            </div>
+        </div>
+
         <div id="divAddressContainer" >
             <div ng-if="googleCtrl.siteName == 'BRFO'" class="responsiveText sendToBack">
                W10003 Wisconsin 54, <br>Black River Falls, WI 54615
@@ -146,10 +160,6 @@
         <div id="divStoreHours" class="responsiveText">
             Store Hours
             <span ng-bind-html="settingsCtrl.storeHours" ></span>
-        </div>
-                        
-        <div id="divEmailAddress" class="responsiveText centered">
-            {{settingsCtrl.emailAddress}}
         </div>
         
         <div id="divBottomFiller">
